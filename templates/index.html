@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">CINERL / DISCOVERY ENGINE</p>
+  <h1>Discover movies through <em>Reinforcement Learning.</em></h1>
+  <p class="lede">A cinematic interface for recommendations selected by a trained Q-learning agent.</p>
+</section>
+<section class="panel">
+  <form id="recommend-form">
+    <label>User ID <select id="user_id" name="user_id" required></select></label>
+    <label>Preferred genre <select id="preferred_genre" name="preferred_genre" required></select></label>
+    <label>Satisfaction <select id="satisfaction" name="satisfaction"><option>Low</option><option>Medium</option><option selected>High</option></select></label>
+    <button type="submit">Generate recommendations</button>
+  </form>
+</section>
+<section id="results" class="hidden">
+  <div class="section-heading"><p class="eyebrow">YOUR SESSION</p><h2 id="result-title"></h2></div>
+  <div id="movies" class="movie-grid"></div>
+  <a class="text-link" href="/insights">Explore agent insights →</a>
+</section>
+{% endblock %}
